@@ -54,6 +54,9 @@ check_android_version() {
     if [[ ${API} -ge 26 ]]; then
         ui_print "- Android SDK ${LANG_CUST_INST_VERSION}: ${API}"
     else
-        require_new_android "${API}"
+        ui_print "- Android SDK ${LANG_CUST_INST_VERSION}: ${API}"
+        # skip version check - due to magisk bug
+        # https://github.com/ElderDrivers/EdXposed/issues/840
+        # require_new_android "${API}"
     fi
 }
